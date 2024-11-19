@@ -1,3 +1,4 @@
+const path = require("path")
 const express = require('express')
 const bodyparser = require('body-parser')
 
@@ -6,6 +7,7 @@ const shop = require('../01Express/routes/shop')
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyparser.urlencoded({extended:false}))
 
 
